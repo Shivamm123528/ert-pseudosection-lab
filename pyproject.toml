@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ert-pseudosection-lab"
+version = "1.0.0"
+description = "Automated ERT electrode survey design, pseudosection plotting and median-depth estimates"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24,<3",
+    "pandas>=2.0,<3",
+    "matplotlib>=3.7,<4",
+    "plotly>=5.18,<7",
+    "streamlit>=1.35,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7,<10"]
+
+[project.scripts]
+ert-pseudosection = "ert_pseudosection.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
