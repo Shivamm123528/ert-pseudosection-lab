@@ -120,36 +120,6 @@ The coefficient at `n=1` for Wenner–Schlumberger is tabulated as 0.520, wherea
 
 `examples/wenner_blank_template.csv` and `examples/wenner_100_ohm_m_example.csv` are for **24 electrodes at 5 m**, max-a multiplier 2. Match those settings before trying to upload the example CSV. The sample values are generated analytically for a *uniform* 100 Ω·m half-space, not field readings.
 
-## GitHub and Streamlit Community Cloud
-
-### Upload to GitHub
-
-1. On [GitHub](https://github.com/new), create a **public** repository named `ert-pseudosection-lab` (do not add an initial README or `.gitignore`, since they are in the project already).
-2. Open PowerShell in the unzipped project folder and run:
-
-```powershell
-git init
-git add .
-git commit -m "Initial ERT pseudosection lab"
-git branch -M main
-```
-
-3. On the GitHub page for the empty repository, copy **its actual HTTPS remote URL**, then run:
-
-```powershell
-git remote add origin <paste-your-repository-HTTPS-URL-here>
-git push -u origin main
-```
-
-`<paste-your-repository-HTTPS-URL-here>` is the **one required replacement**; for example, your own `https://github.com/USERNAME/ert-pseudosection-lab.git`. GitHub authentication may ask you to sign in.
-
-### Deploy to Streamlit
-
-1. Open [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with GitHub.
-2. Choose **Create app**, then your repository, the `main` branch, and the entry point `app.py`.
-3. Deploy. Streamlit reads the root `requirements.txt` and installs this package and its dependencies.
-
-The app needs no API key, database, `.env` file or external datasets. The CSV and PNG downloads are calculated from settings; the app does not upload user data to an external server by itself.
 
 ## Scientific limitations and responsible language
 
